@@ -63,16 +63,18 @@
         #actual{
             height: 500px;
             width: 800px;
-            margin-left: 50px;
+            margin-left: auto;
+
+            
+            
+            
         }
         #button2{
             margin-top: 10px;
         }
         #Audio{
-            margin-right: 550px;
             background-color: #4aa0da;
-            margin-left: 50px;
-            margin-bottom: 10px;
+            text-align: center;
         }
         #video{
             height: 400px;
@@ -89,6 +91,15 @@
         .pdf a:hover {
             background-color: #1a252f;
         }
+        #yearbook{
+            text-align: center;
+        }
+        #audio1{
+            margin-bottom: 10px;
+        }
+        #audio2{
+            margin-bottom: 10px;
+        }
     </style>
 </head>
 <body>
@@ -99,11 +110,18 @@
     <main>
         <section id="audio">
             <h2>Music and Vids.</h2>
-            <audio id="Audio" src="gut morgin sped remix.mp3" controls></audio>
-            <audio id="Audio" src="crispy challah.mp3" controls></audio>
+             <div>
+            <audio id="audio1" src="gut morgin sped remix.mp3" controls></audio>
+            </div>
+            <div> 
+            <audio id="audio2" src="crispy challah.mp3" controls></audio>
+            </div>
+            <div>
             <video id="video" controls>
                 <source src="a gut morgin.mp4" type="video/mp4">
             </video>
+            </div>
+        
             </div>
         </section>
         <section id="pictures">
