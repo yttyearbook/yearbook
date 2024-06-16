@@ -1,6 +1,9 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap" rel="stylesheet">
     <link rel="shourtcut icon" type="x-icon" href="logo-1.png">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -105,7 +108,9 @@
             vertical-align: middle;
             margin-bottom: 75px;
             margin-left: 15px;
-           font-family: 'Gill Sans', 'Gill Sans MT', 'Calibri', 'Trebuchet MS', sans-serif; 
+           font-family: "Playfair Display", serif;
+           font-weight: auto;
+           font-style: normal;
         }
         #buttonofpdf{
             background-color: #2c3e50;
@@ -117,6 +122,16 @@
         #buttonofpdf:hover{
             background-color: #1a252f;
         }
+        .classpic{
+            display: inline-block;
+            vertical-align: middle;
+            width: 700px;
+            height: 700px;
+        }
+        .picture{
+            vertical-align: middle;
+        }
+
     </style>
 </head>
 <body>
@@ -140,23 +155,23 @@
                 <source src="a gut morgin.mp4" type="video/mp4">
             </video>
             </div>
-        
-            </div>
+    
+        </div>
         </section>
         <section id="pictures">
             <h2>Pictures</h2>
             <div class="picture">
-                <img src="image1.jpg" alt="Rabbi shellberg Class Pic.">
-                <img src="image2.jpg" alt="Rabbi danzager Class pic.">
+                <img src="classg.jpg" alt="Rabbi shellberg Class Pic." class="classpic">
+                <img src="glassng.jpg" alt="Rabbi danzager Class pic." class="classpic">
             </div>
         </section>
         <section id="yearbook">
             <h2>Yearbook PDF</h2>
             <div id="yearbook">
-                <iframe src="yearbook2024-1.pdf" frameborder="0" id="actual"></iframe>
+                <iframe src="yearbook2024.pdf" frameborder="0" id="actual"></iframe>
             </div>
             <div class="pdf">
-                <button id="buttonofpdf" href="yearbook2024.pdf" download>Download Yearbook PDF</button>
+                <button id="buttonofpdf" onclick="downloadPDF()" >Download Yearbook PDF</button>
             </div>
         </section>
     </main>
@@ -164,6 +179,32 @@
         <p>&copy; 2024 Yeshiva Torah Temimah</p>
         <p> Created by Akiva Taub </p>
     </footer>
+    <script>
+        document.addEventListener('DOMContentLoaded', (event) => {
+            const video = document.getElementById('video');
+
+            // Set the current time to 1 second (0:01)
+            video.currentTime = 1;
+        });
+        document.addEventListener('DOMContentLoaded', (event) => {
+            const audio = document.getElementById('audio1');
+
+            // Set the current time to 1 second (0:01)
+            audio.currentTime = 1;
+        });
+         function downloadPDF() {
+        // The path to the PDF file
+        const pdfPath = 'yearbook2024.pdf';
+
+        // Create a temporary anchor element and trigger the download
+        const link = document.createElement('a');
+        link.href = pdfPath;
+        link.download = pdfPath.split('/').pop();
+        document.body.appendChild(link);
+        link.click();
+        document.body.removeChild(link);
+    }
+    </script>
     
 </body>
 </html>
